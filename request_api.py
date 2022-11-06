@@ -1,12 +1,12 @@
 import pprint
 
 from requests import get
-from json import load
-from models.pokemon_model import Pokemon
+from models.pokemon_model import PokemonModel
+from models.evolution_chain_model import EvolutionChain
 
 def get_pokemon(name: str):
-    response = get(f"https://pokeapi.co/api/v2/pokemon-species/{name}/")
+    response = get(f"https://pokeapi.co/api/v2/evolution-chain/{name}/")
     pprint.pprint(response.json())
-    print(Pokemon(**response.json()).pokedex_numbers)
+    print(EvolutionChain(**response.json()))
 
-get_pokemon("squirtle")
+get_pokemon("27")
