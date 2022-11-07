@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import List
+from typing import List, Optional
 
 from pydantic import BaseModel
 
@@ -117,7 +117,7 @@ class PokemonModel(BaseModel):
     color: Color
     egg_groups: List[EggGroup]
     evolution_chain: EvolutionChain
-    evolves_from_species: EvolvesFromSpecies
+    evolves_from_species: Optional[EvolvesFromSpecies]
     flavor_text_entries: List[FlavorTextEntry]
     form_descriptions: List
     forms_switchable: bool

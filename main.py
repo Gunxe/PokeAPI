@@ -45,7 +45,7 @@ class Pokemon:
     evolution: List[Evolution]
     encounter_location: List[Location]
 
-3
+
 def get_pokedex_list(pokedex_numbers: List[PokedexNumber]) -> List[Pokedex]:
     pokedexs: List[Pokedex] = []
     for pokedex in pokedex_numbers:

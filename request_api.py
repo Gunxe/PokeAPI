@@ -3,15 +3,15 @@ import pprint
 from requests import get
 from models.pokemon_model import PokemonModel
 from models.evolution_chain_model import EvolutionChain
-from models.pokemon_location_model import LocationModel, LocationItem
+from models.pokemon_location_model import LocationItem
 
 
 def get_pokemon(name: str):
-    response = get(f"https://pokeapi.co/api/v2/pokemon/{name}/encounters")
+    response = get(f"https://pokeapi.co/api/v2/evolution-chain/{name}/")
     pprint.pprint(response.json())
-    for location in response.json():
-        print(location)
-        print(LocationItem(**location))
+    print(response)
+    print(EvolutionChain(**response.json()))
 
 
-get_pokemon("pikachu")
+
+get_pokemon("27")
